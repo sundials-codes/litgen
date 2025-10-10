@@ -291,12 +291,16 @@ CPP_PYTHON_NUMERIC_INT_SYNONYMS = [
     CppPythonTypesSynonyms("size_t", "int"),
     CppPythonTypesSynonyms("ssize_t", "int"),
     CppPythonTypesSynonyms("std::size_t", "int"),
+    CppPythonTypesSynonyms("sunindextype", "int"),
+    CppPythonTypesSynonyms("suncountertype", "int"),
+    CppPythonTypesSynonyms("sunbooleantype", "int"),
 ]
 
 CPP_PYTHON_NUMERIC_FLOAT_SYNONYMS = [
     CppPythonTypesSynonyms("float", "float"),
     CppPythonTypesSynonyms("double", "float"),
     CppPythonTypesSynonyms("long double", "float"),
+    CppPythonTypesSynonyms("sunrealtype", "float"),
 ]
 
 
