@@ -190,14 +190,14 @@ def _make_adapted_lambda_code_end(adapted_function: AdaptedFunction, lambda_adap
                 adapted_function.cpp_adapted_function.qualified_function_name_with_specialization()
             )
 
-    # Fill maybe_return_r
-    maybe_return_r = None if _fn_return_type == "void" else "return lambda_result"
-
     # Fill maybe_lambda_output_code
     if len(lambda_adapter.lambda_output_code) > 0:
         maybe_lambda_output_code = "\n" + code_utils.strip_empty_lines(lambda_adapter.lambda_output_code)
     else:
         maybe_lambda_output_code = None
+
+    # Fill maybe_return_r
+    maybe_return_r = None if _fn_return_type == "void" or maybe_lambda_output_code else "return lambda_result"
 
     #
     # Apply replacements
