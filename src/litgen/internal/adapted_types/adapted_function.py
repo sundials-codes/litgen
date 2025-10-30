@@ -511,6 +511,7 @@ class AdaptedFunction(AdaptedElement):
             {_i_}{maybe_return_value_policy}{maybe_comma}
             {_i_}{maybe_keep_alive}{maybe_comma}
             {_i_}{maybe_call_guard}{maybe_comma}
+            {_i_}{maybe_call_policy}{maybe_comma}
             """,
             flag_strip_empty_lines=True,
         )
@@ -548,6 +549,7 @@ class AdaptedFunction(AdaptedElement):
 
         replace_lines.maybe_keep_alive = self._pydef_fill_keep_alive_from_function_comment()
         replace_lines.maybe_call_guard = self._pydef_fill_call_guard_from_function_comment()
+        replace_lines.maybe_call_policy = self._pydef_fill_call_policy_from_function_comment("nb::call_policy")
 
         # Process template
         code = code_utils.process_code_template(
